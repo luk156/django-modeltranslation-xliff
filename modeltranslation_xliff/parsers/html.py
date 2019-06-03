@@ -274,4 +274,4 @@ def add_xliff_tags(segment):
     :param segment: translatable segment
     :return: segment with HTML tags marked with inline XLIFF XML tags
     """
-    return add_t_tags(add_ph_tags(segment))
+    return add_t_tags(add_ph_tags(escape(segment)))
