@@ -48,7 +48,7 @@ class XliffExchangeMixin:
         fields = obj._meta.get_fields()
         translatable_fields = []
         for f in fields:
-            name, *lang = f.name.split('_', 1)
+            name, *lang = f.name.rsplit('_', 1)
             # .replace('ind', 'id') fixes Indonesian langugage code
             lang = lang[0].replace('_', '-').replace('ind', 'id') if lang else ''
             if isinstance(f, TranslationField) and lang == DEFAULT_LANGUAGE:
