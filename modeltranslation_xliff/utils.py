@@ -86,9 +86,16 @@ def create_xliff(translation_data):
                 else:
                     segments = (block,)
                 for seg in segments:
-                    skeleton = skeleton.replace(
-                        'value": "' + seg.replace("\n","\\n").replace("\r","\\r").replace("\t","\\t") + '"', 'value": "' + '%%%{}%%%'.format(segment_id) + '"', 1
-                    )
+                    if seg.isnumeric():
+                        skeleton = skeleton.replace(
+                            'value": "' + seg.replace("\n","\\n").replace("\r","\\r").replace("\t","\\t") + '"',
+                            'value": "' + '%%%{}%%%'.format(segment_id) + '"', 1
+                        )
+                    else:
+                        skeleton = skeleton.replace(
+                            seg.replace("\n", "\\n").replace("\r", "\\r").replace("\t", "\\t"),
+                            '%%%{}%%%'.format(segment_id), 1
+                        )
                     trans_unit = etree.SubElement(
                         inner_group, 'trans-unit', {
                             'id': str(segment_id),
