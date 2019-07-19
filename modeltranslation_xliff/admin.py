@@ -121,7 +121,8 @@ class XliffExchangeMixin:
         queryset = self.model.objects.filter(pk__in=object_pks)
         fields = [f['name'] + '_' + language
                   for f in translation_data['objects'][0]['fields']]
-        for item, obj in zip(queryset, translation_data['objects']):
+        for obj in translation_data['objects']:
+            item = queryset.filter(id=int(obj['id']))[0]
             for i, field in enumerate(obj['fields']):
                 setattr(item, fields[i], field['value'])
                 item.save(update_fields=fields)
