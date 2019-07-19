@@ -158,7 +158,7 @@ def import_xliff(xliff):
                 _('Missing translation for segment #{}!').format(segment_id)
             )
         translation = get_inner_text(target)
-        skeleton = skeleton.replace('%%%{}%%%'.format(segment_id), translation, 1)
+        skeleton = skeleton.replace('%%%{}%%%'.format(segment_id), translation.replace("\n","\\n").replace("\r","\\r").replace("\t","\\t"), 1)
     translation_data = json.loads(skeleton)
     translation_data['language'] = target_language
     return translation_data
