@@ -8,7 +8,6 @@ with open('README.rst', 'r', encoding='utf-8') as fo:
 setup(
     name='django-modeltranslation-xliff',
     version=VERSION,
-    packages=['modeltranslation_xliff'],
     url='https://github.com/romanvm/django-modeltranslation-xliff',
     license='MIT',
     author='Roman Miroshnychenko',
