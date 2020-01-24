@@ -35,5 +35,10 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Text Processing :: Linguistic'
-    ]
+    ],
+    package_data={
+        'modeltranslation_xliff/': [
+            'templates/modeltranslation_xliff/change_list.html'
+        ],
+    },
 )
