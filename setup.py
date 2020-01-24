@@ -16,7 +16,7 @@ setup(
     long_description=long_descr,
     long_description_content_type='text/x-rst',
     python_requires='>=3.4',
-    packages=find_packages(exclude=['docs*']),
+    packages=find_packages(exclude=['docs*', 'testapp*']),
     install_requires=[
         'Django>=1.11',
         'django-modeltranslation>=0.13b1',
