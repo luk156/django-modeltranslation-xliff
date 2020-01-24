@@ -37,7 +37,7 @@ setup(
         'Topic :: Text Processing :: Linguistic'
     ],
     package_data={
-        'modeltranslation_xliff/': [
+        'modeltranslation_xliff': [
             'templates/modeltranslation_xliff/change_list.html'
         ],
     },
