@@ -1,4 +1,6 @@
 include *.rst *.txt .coveragerc pytest.ini manage.py tox.ini
-recursive-include modeltranslation_xliff *
+recursive-include modeltranslation_xliff *.py
+recursive-include modeltranslation_xliff/parsers *.py
+recursive-include modeltranslation_xliff/templates/modeltranslation_xliff *.html
 recursive-include testapp *
 global-exclude *.pyc *.pyo __pycache__
