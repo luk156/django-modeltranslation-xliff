@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 VERSION = '1.0.0b3'
 
@@ -17,6 +17,7 @@ setup(
     long_description=long_descr,
     long_description_content_type='text/x-rst',
     python_requires='>=3.4',
+    packages=find_packages(exclude=['docs*']),
     install_requires=[
         'Django>=1.11',
         'django-modeltranslation>=0.13b1',
